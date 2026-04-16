@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - master
+      - main
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -50,6 +50,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
 
       - run: npm publish --access public
+      - run: pnpm publish --no-git-checks --access public
         if: ${{ steps.release.outputs.release_created }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
