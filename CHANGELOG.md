@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/alexasomba/paystack-browser/compare/v1.4.0...v1.4.1) (2026-04-16)
+
+
+### Bug Fixes
+
+* update workflow and switch to pnpm ([e3d1ebd](https://github.com/alexasomba/paystack-browser/commit/e3d1ebdf89689b4091f4f0c66ee4b4af13b727d9))
+
 ## [1.4.0](https://github.com/alexasomba/paystack-browser/compare/v1.3.0...v1.4.0) (2026-04-16)
 
 
