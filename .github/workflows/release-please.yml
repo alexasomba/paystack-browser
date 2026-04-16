@@ -49,7 +49,6 @@ jobs:
       - run: pnpm test
         if: ${{ steps.release.outputs.release_created }}
 
-      - run: npm publish --access public
       - run: pnpm publish --no-git-checks --access public
         if: ${{ steps.release.outputs.release_created }}
         env:
