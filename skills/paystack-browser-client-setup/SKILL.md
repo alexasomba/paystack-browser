@@ -1,6 +1,6 @@
 ---
-name: client-setup
-description: Use when installing or configuring @alexasomba/paystack-browser, creating a browser Paystack client, or choosing frontend-safe authentication settings.
+name: paystack-browser-client-setup
+description: Use when installing or configuring the Paystack Browser SDK @alexasomba/paystack-browser, creating a frontend Paystack client, or choosing browser-safe authentication settings.
 license: MIT
 compatibility: "Modern browsers and bundlers; package tooling/SSR builds require Node.js >=22.0.0; ESM package; public-key frontend runtime only."
 ---

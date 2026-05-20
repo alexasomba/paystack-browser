@@ -1,6 +1,6 @@
 ---
-name: retries-idempotency
-description: Use when configuring @alexasomba/paystack-browser retries, Retry-After behavior, idempotency keys, timeouts, and browser-safe retry semantics.
+name: paystack-browser-retries-idempotency
+description: Use when configuring Paystack Browser SDK retries, Retry-After behavior, idempotency keys, timeouts, and browser-safe retry semantics for transactions or other API calls.
 license: MIT
 compatibility: "Modern browsers and bundlers; package tooling/SSR builds require Node.js >=22.0.0; ESM package; public-key frontend runtime only."
 ---
@@ -22,6 +22,18 @@ const paystack = createPaystack({
 ```
 
 The SDK respects `Retry-After` for `429` responses when present.
+
+## Helper exports
+
+The SDK exports lower-level idempotency helpers for tests and custom transport utilities:
+
+- `DEFAULT_IDEMPOTENCY_HEADER`
+- `createIdempotencyKey()`
+- `resolveIdempotencyKey(input)`
+- `hasHeader(headers, name)`
+- `setHeader(headers, name, value)`
+
+Prefer `createPaystack({ idempotencyKey })` for normal browser application code.
 
 ## Best practices
 

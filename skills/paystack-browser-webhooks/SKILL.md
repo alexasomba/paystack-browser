@@ -1,6 +1,6 @@
 ---
-name: webhooks
-description: Use when an agent considers webhook handling while using @alexasomba/paystack-browser; explains why verification belongs on the server.
+name: paystack-browser-webhooks
+description: Use when an agent considers Paystack webhook handling while using @alexasomba/paystack-browser; explains why webhook verification belongs on a server and not in browser code.
 license: MIT
 compatibility: "Modern browsers and bundlers; package tooling/SSR builds require Node.js >=22.0.0; ESM package; public-key frontend runtime only."
 ---

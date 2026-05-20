@@ -1,6 +1,6 @@
 ---
-name: browser-safety
-description: Use when deciding what Paystack functionality can run in @alexasomba/paystack-browser versus what must move to a backend.
+name: paystack-browser-safety
+description: Use when deciding what Paystack SDK functionality can run in @alexasomba/paystack-browser versus what must move to a backend to protect secret keys and sensitive transactions.
 license: MIT
 compatibility: "Modern browsers and bundlers; package tooling/SSR builds require Node.js >=22.0.0; ESM package; public-key frontend runtime only."
 ---
@@ -25,7 +25,17 @@ The SDK rejects keys that look like `sk_test_*` or `sk_live_*`.
 - Refunds and dispute operations.
 - Webhook verification.
 - Secret-key transaction verification before fulfillment.
+- Settlement, balance, integration, dispute evidence, or account administration workflows.
 - Any operation that would expose business-only credentials or privileged account state.
+
+Generated helpers may exist for these operations because the SDK is generated from the full OpenAPI surface. Treat them as type-level visibility, not browser permission.
+
+## Usually safe browser work
+
+- Collecting frontend checkout inputs.
+- Starting public-key checkout flows where Paystack permits browser calls.
+- Calling frontend-safe read or initialization operations only when they do not require a secret key.
+- Passing an `access_code` from your backend to `@alexasomba/paystack-inline`.
 
 ## Browser constraints
 

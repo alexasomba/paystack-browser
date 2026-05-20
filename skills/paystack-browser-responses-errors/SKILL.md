@@ -1,6 +1,6 @@
 ---
-name: responses-errors
-description: Use when handling @alexasomba/paystack-browser responses, PaystackResponse, unwrap, PaystackError, request IDs, and Paystack API envelopes.
+name: paystack-browser-responses-errors
+description: Use when handling Paystack SDK responses and errors in @alexasomba/paystack-browser, including PaystackResponse, unwrap, PaystackError, request IDs, and Paystack API envelopes.
 license: MIT
 compatibility: "Modern browsers and bundlers; package tooling/SSR builds require Node.js >=22.0.0; ESM package; public-key frontend runtime only."
 ---
@@ -30,6 +30,12 @@ try {
   }
 }
 ```
+
+`PaystackError` exposes `status`, `requestId`, `code`, `type`, and `meta`. Use `isProcessorError()` and `isValidationError()` for programmatic branching, but do not show raw diagnostic details directly to users.
+
+## Helper exports
+
+Use `getPaystackRequestId(headers)` in tests or diagnostics when extracting request IDs from raw response headers. Request IDs are commonly returned in `x-paystack-request-id` or `x-request-id`.
 
 ## Best practices
 
